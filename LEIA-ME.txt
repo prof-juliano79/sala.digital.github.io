@@ -1,0 +1,18 @@
+MINHA SALA DIGITAL — SITE PROTÓTIPO 2.2
+
+1. Extraia todos os arquivos ZIP em uma mesma pasta.
+2. Abra index.html com Chrome ou Edge.
+3. Entre como professor com a senha definida anteriormente.
+4. Na aba Cadastrar alunos, crie usuários e senhas fictícios e vincule turmas.
+5. Saia e entre com um aluno para testar conteúdos e atividades.
+
+Baseado no site 2.1, preservando dados do navegador da versão anterior
+(quando aberto na mesma origem/pasta, conforme regras do navegador).
+
+ATENÇÃO: ESTE É UM PROTÓTIPO ESTÁTICO OFFLINE, NÃO UM LOGIN SEGURO.
+As senhas e os dados ficam no navegador, e o código é acessível ao visitante.
+Hash de senha no cliente não protege contra alteração do JavaScript.
+Os dados não sincronizam entre computadores ou celulares.
+Não utilize nomes, senhas ou notas reais de estudantes.
+Para publicar um site com contas reais será necessário backend, HTTPS,
+autenticação no servidor, banco de dados e políticas de privacidade/LGPD.
