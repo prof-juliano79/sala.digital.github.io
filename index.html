@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#164b93">
+    <title>Minha Sala Digital 2.2</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+</head>
+
+<body>
+    <header>
+        <div class="header-inner"> <div id="logo" style="background-color: white; width: 50px; height: 50px; margin: 0;"> <img src="favicon.svg" width="50px"  height="50px"></div> <strong>Minha Sala Digital</strong><span id="role-label">Versão 2.2</span></div>
+    </header>
+    <main>
+        <section id="welcome" class="welcome panel">
+            <img src="favicon.svg" width="130" height="130">
+
+            <h1>Minha Sala Digital</h1>
+            <p>Conteúdos, atividades e acompanhamento escolar em um só lugar.</p>
+            <div class="login-options">
+                <div class="login-card">
+                    <h2>Área do professor</h2>
+                    <p>Gerencie turmas, aulas e avaliações.</p>
+                    <form id="login-form"><label for="password">Senha do professor</label><input id="password"
+                            type="password" placeholder="Digite sua senha" required
+                            autocomplete="current-password"><button type="submit">Entrar como professor</button></form>
+                </div>
+                <div class="login-card">
+                    <h2>Área do aluno</h2>
+                    <p>Consulte os conteúdos e as atividades publicadas pelo professor.</p>
+                    <form id="student-form"><label for="student-user">Usuário do aluno</label><input id="student-user"
+                            required autocomplete="username" placeholder="Seu usuário"><label
+                            for="student-password">Senha do aluno</label><input id="student-password" type="password"
+                            required autocomplete="current-password" placeholder="Sua senha"><button type="submit"
+                            class="secondary">Entrar como aluno</button></form>
+                </div>
+            </div>
+            <p class="warning">Ambiente de testes. Não insira dados pessoais reais de estudantes.</p>
+        </section>
+        <section id="workspace" hidden>
+            <div class="workspace-head">
+                <div>
+                    <h1 id="workspace-title">Painel</h1>
+                    <p id="workspace-subtitle" class="muted"></p>
+                </div><button id="logout" class="secondary" type="button">Sair</button>
+            </div>
+            <nav id="navigation" aria-label="Navegação principal"></nav>
+            <div class="toolbar panel"><label for="class-select">Turma selecionada</label><select
+                    id="class-select"></select></div>
+            <div id="view"></div>
+        </section>
+        <p id="feedback" role="status" aria-live="polite"></p>
+    </main>
+    <footer>Minha Sala Digital · Protótipo local 2.1</footer>
+    <script src="storage.js"></script>
+    <script src="auth.js"></script>
+    <script src="java.js"></script>
+</body>
+
+</html>
