@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="500"
+   height="500"
+   viewBox="0 0 132.29166 132.29167"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.4 (dcaf3e7, 2026-05-05)"
+   sodipodi:docname="inomeado.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.2365321"
+     inkscape:cx="199.34784"
+     inkscape:cy="297.20216"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <rect
+       x="-17.727248"
+       y="180.70356"
+       width="84.061466"
+       height="66.906065"
+       id="rect2" />
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect12"
+       is_visible="true"
+       lpeversion="1"
+       nodesatellites_param="F,0,0,1,0,20.805245,0,1 @ F,0,0,1,0,0.37959471,0,1 @ F,0,0,1,0,0.37959471,0,1 @ F,0,0,1,0,0.37959471,0,1"
+       radius="1.4346887"
+       unit="px"
+       method="auto"
+       mode="F"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+  </defs>
+  <g
+     inkscape:label="Camada 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:none;fill-opacity:1;stroke:#0005fe;stroke-width:3.083;stroke-dasharray:none;stroke-opacity:1"
+       id="rect11"
+       width="91.991074"
+       height="66.269875"
+       x="23.754272"
+       y="16.340519"
+       ry="0"
+       inkscape:path-effect="#path-effect12"
+       sodipodi:type="rect"
+       rx="0"
+       d="m 44.559517,16.340519 h 70.806233 a 0.37959471,0.37959471 45 0 1 0.3796,0.379595 l 0,65.510685 a 0.37959471,0.37959471 135 0 1 -0.3796,0.379595 l -91.231883,0 A 0.37959471,0.37959471 45 0 1 23.754272,82.230799 V 37.145764 A 20.805245,20.805245 135 0 1 44.559517,16.340519 Z"
+       transform="translate(-2.5676649,12.410381)" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:46.8444px;line-height:113.6;font-family:'Poor Richard';-inkscape-font-specification:'Poor Richard';letter-spacing:0.9307px;writing-mode:lr-tb;direction:ltr;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.2097;stroke-dasharray:none;stroke-opacity:1"
+       x="29.811018"
+       y="70.182266"
+       id="text11"
+       transform="scale(0.97388072,1.0268198)"><tspan
+         sodipodi:role="line"
+         id="tspan11"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:113.6;font-family:'Poor Richard';-inkscape-font-specification:'Poor Richard';letter-spacing:0.930698px;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.2097;stroke-dasharray:none;stroke-opacity:1"
+         x="29.811018"
+         y="70.182266">mdb</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.175px;line-height:113.6;font-family:'Poor Richard';-inkscape-font-specification:'Poor Richard';letter-spacing:0.264583px;writing-mode:lr-tb;direction:ltr;fill:#000000;stroke:none;stroke-width:1;stroke-opacity:1"
+       x="33.895905"
+       y="85.337509"
+       id="text1"><tspan
+         sodipodi:role="line"
+         id="tspan1"
+         style="stroke:none;stroke-width:1"
+         x="33.895905"
+         y="85.337509" /></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,-2.5676649,12.410381)"
+       id="text2"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:113.6;font-family:'Poor Richard';-inkscape-font-specification:'Poor Richard';letter-spacing:1px;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect2);fill:#000000;stroke:none;stroke-width:3.77953;stroke-opacity:1"><tspan
+         x="-17.726562"
+         y="932.53109"
+         id="tspan5"><tspan
+           dx="0 8.3027344"
+           id="tspan4">mi</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.49832px;line-height:113.6;font-family:'Poor Richard';-inkscape-font-specification:'Poor Richard';letter-spacing:0.62486px;writing-mode:lr-tb;direction:ltr;fill:#000000;stroke:#000000;stroke-width:0;stroke-dasharray:none;stroke-opacity:1"
+       x="47.809357"
+       y="71.314857"
+       id="text3"
+       transform="scale(0.87466948,1.143289)"><tspan
+         sodipodi:role="line"
+         id="tspan3"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Poor Richard';-inkscape-font-specification:'Poor Richard';stroke:#000000;stroke-width:0;stroke-dasharray:none;stroke-opacity:1"
+         x="47.809357"
+         y="71.314857">minha sala digital</tspan></text>
+  </g>
+</svg>

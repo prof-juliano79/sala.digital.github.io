@@ -1,0 +1,76 @@
+rules_version = '2';
+service cloud.firestore {
+ match /databases/{database}/documents {
+  function signedIn(){ return request.auth != null; }
+  function user(){ return get(/databases/$(database)/documents/users/$(request.auth.uid)).data; }
+  function teacher(){ return signedIn() && user().role == 'professor'; }
+  function owner(cid){ return teacher() && get(/databases/$(database)/documents/classes/$(cid)).data.teacherId == request.auth.uid; }
+  function enrolled(cid){ return signedIn() && user().role == 'aluno' && cid in user().classIds; }
+  function access(cid){ return owner(cid) || enrolled(cid); }
+  function ownedClass(cid) {
+   return exists(/databases/$(database)/documents/classes/$(cid)) &&
+    get(/databases/$(database)/documents/classes/$(cid)).data.teacherId == request.auth.uid;
+  }
+  function validEnrollments(ids) {
+   return ids is list && ids.size() <= 5 &&
+    (ids.size() < 1 || ownedClass(ids[0])) &&
+    (ids.size() < 2 || ownedClass(ids[1])) &&
+    (ids.size() < 3 || ownedClass(ids[2])) &&
+    (ids.size() < 4 || ownedClass(ids[3])) &&
+    (ids.size() < 5 || ownedClass(ids[4]));
+  }
+  match /users/{uid} {
+   allow get: if signedIn() && request.auth.uid == uid;
+   allow list: if teacher() && ((resource.data.role == 'aluno' && resource.data.teacherId == request.auth.uid) || (resource.data.role == 'professor' && resource.data.createdBy == request.auth.uid));
+   allow create: if teacher() && (
+    (request.resource.data.keys().hasOnly(['name','email','role','teacherId','classIds'])
+     && request.resource.data.role == 'aluno' && request.resource.data.teacherId == request.auth.uid
+     && request.resource.data.name is string && request.resource.data.email is string
+     && request.resource.data.classIds.size() == 1 && validEnrollments(request.resource.data.classIds))
+    ||
+    (request.resource.data.keys().hasOnly(['name','email','role','createdBy'])
+     && request.resource.data.role == 'professor' && request.resource.data.createdBy == request.auth.uid
+     && request.resource.data.name is string && request.resource.data.email is string)
+   );
+   allow update: if teacher() && resource.data.role == 'aluno' &&
+    resource.data.teacherId == request.auth.uid &&
+    request.resource.data.diff(resource.data).affectedKeys().hasOnly(['classIds']) &&
+    validEnrollments(request.resource.data.classIds);
+   allow delete: if false;
+  }
+  match /classes/{cid} {
+   allow get, list: if signedIn() && ((teacher() && resource.data.teacherId == request.auth.uid) || (user().role == 'aluno' && cid in user().classIds));
+   allow create: if teacher() && request.resource.data.teacherId == request.auth.uid
+    && request.resource.data.keys().hasOnly(['name','subject','teacherId','createdAt'])
+    && request.resource.data.name is string && request.resource.data.name.size() <= 100
+    && request.resource.data.subject is string && request.resource.data.subject.size() <= 100;
+   allow update: if teacher() && resource.data.teacherId == request.auth.uid && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['name','subject']) && request.resource.data.name is string && request.resource.data.name.size() > 0 && request.resource.data.name.size() <= 100 && request.resource.data.subject is string && request.resource.data.subject.size() > 0 && request.resource.data.subject.size() <= 100;
+   allow delete: if teacher() && resource.data.teacherId == request.auth.uid;
+   match /{kind}/{postId} {
+    allow get, list: if kind in ['contents','activities','notices'] && access(cid);
+    allow create: if kind in ['contents','activities','notices'] && owner(cid)
+     && request.resource.data.keys().hasOnly(['title','body','date','publishedAt','dueAt','createdAt','attachments'])
+     && request.resource.data.title is string && request.resource.data.title.size() <= 180
+     && request.resource.data.body is string && request.resource.data.body.size() <= 15000
+     && (!('dueAt' in request.resource.data) || (kind == 'activities' && request.resource.data.dueAt is string))
+     && (!('publishedAt' in request.resource.data) || request.resource.data.publishedAt is string)
+     && (!('attachments' in request.resource.data) || (kind == 'activities' && request.resource.data.attachments is list && request.resource.data.attachments.size() <= 5));
+    allow update: if false;
+    allow delete: if kind in ['contents','activities','notices'] && owner(cid);
+    match /comments/{commentId} {
+     allow get, list: if kind in ['activities','notices'] && access(cid);
+     allow create: if kind in ['activities','notices'] && access(cid)
+      && exists(/databases/$(database)/documents/classes/$(cid)/$(kind)/$(postId))
+      && request.resource.data.keys().hasOnly(['body','authorId','authorName','role','createdAt'])
+      && request.resource.data.authorId == request.auth.uid
+      && request.resource.data.role == user().role
+      && request.resource.data.authorName is string && request.resource.data.authorName.size() <= 200
+      && request.resource.data.body is string && request.resource.data.body.size() > 0
+      && request.resource.data.body.size() <= 2000;
+     allow delete: if owner(cid);
+     allow update: if false;
+    }
+   }
+  }
+ }
+}
